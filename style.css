@@ -94,27 +94,42 @@ body {
 
 /* --- ADAPTATION MOBILE (Smartphone) --- */
 @media (max-width: 600px) {
+
     .style1 {
-        font-size: 5vw; /* Un peu plus grand sur mobile pour être lisible */
-        top: 5%;
+        font-size: 5.5vw; /* Un peu plus grand sur mobile pour être lisible */
+        top: 10%;
         left: 5%;
+        width: 90%;
+    }
+
+    /* Ajustement du titre Tarif pour qu'il ne soit pas trop collé */
+    .style2 {
+        margin-top: 30px;
+    }
+
+    #meca1 {
+        display: flex;
+        flex-direction: column; /* Aligne les éléments verticalement */
     }
 
     .conteneur-bouton {
-        left: 5% !important; /* On aligne tout à gauche */
-        width: 90%;          /* Les boutons prendront presque toute la largeur */
+        position: relative; /* Ils sortent du flux "par-dessus" l'image */
+        top: auto !important;
+        bottom: auto !important;
+        left: 0 !important;
+        width: 90%;
+        margin: 10px auto; /* Centre les boutons et crée de l'espace */
     }
 
     .bouton-design {
         width: 100%;        /* Le bouton remplit son conteneur */
-        padding: 12px 0;    /* On repasse en pixels pour garder une taille tactile */
-        font-size: 14px;    /* Taille minimum pour être cliquable */
-        /* border-radius: 4px; */
+        padding: 15px 0;    /* On repasse en pixels pour garder une taille tactile */
+        font-size: 16px;    /* Taille minimum pour être cliquable */
+        border-radius: 10px auto;
     }
 
     .zone-appel {
-        bottom: 22%;
-        /* left: 5%; */
+        margin-top: 20px; /* Espace entre l'image et le premier bouton */
     }
 
     .zone-devis {
