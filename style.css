@@ -403,12 +403,16 @@ details[open] {
     .titre-sos {
        font-size: 18vw;         /* Taille du SOS */
         display: block;
+        position: relative;
+        left: -10px; /* Le signe moins déplace vers la gauche */
     }
 
     .titre-meca {
         font-size: 18vw;         /* Taille du Méca 66 */
         display: block;
         margin-top: -15px;
+        position: relative;
+        left: -10px; /* Le signe moins déplace vers la gauche */
     }
 
     .disponibilite p {
