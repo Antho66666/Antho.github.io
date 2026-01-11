@@ -417,9 +417,23 @@ details[open] {
     }
     
     .bouton-info {
-        width: 100%;
-        max-width: 350px;
-        font-size: 1.1rem; /* Police un peu plus petite sur mobile si besoin */
+        /* On enlève la largeur de 450px qui bloque tout */
+        min-width: 0 !important; 
+        
+        /* Le bouton prend 90% de la largeur de l'écran */
+        width: 90% !important; 
+        
+        /* On réduit un peu le padding (espace interne) pour gagner de la place */
+        padding: 15px 10px !important; 
+        
+        /* On réduit un peu la police pour que le texte ne saute pas à la ligne */
+        font-size: 1rem !important; 
+        
+        margin: 10px auto; /* Centre les boutons avec un espace entre eux */
+    }
+
+    .texte-principal {
+        font-size: 1rem !important; /* Ajuste aussi le texte à l'intérieur */
     }
 
     /* --- AJUSTEMENTS UNIQUEMENT POUR LA PAGE TARIFS --- */
