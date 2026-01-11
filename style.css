@@ -27,7 +27,9 @@ body {
     font-family: Impact, sans-serif;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-direction: column; /* Aligne "Tarifs" au dessus de "des prestations" */
+    flex-direction: row; /* Aligne "Tarifs" au dessus de "des prestations" */
+    gap: 15px;           /* Ajouté : Espace entre SOS et Méca 66 */
+    align-items: center;
     line-height: 0.8;
 }
 
@@ -52,7 +54,8 @@ body {
 /* --- TEXTE SUR L'IMAGE --- */
 .style1 {
     position: absolute;
-    top: 10%;  /* Positionné à 10% du haut de l'image */
+    top: 5%;  /* Positionné à 10% du haut de l'image */
+    width: 90%;
     left: 5%;  /* Positionné à 5% du bord gauche */
     color: rgb(197, 197, 197);
     margin: 0;
@@ -310,7 +313,7 @@ details[open] {
     .style1 {
         top: 5%; /* On remonte un peu le bloc pour laisser de la place */
         width: 90%;
-        font-size: 150%;
+        font-size: 100%;
     }
 
     .mots-cles {
