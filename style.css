@@ -188,7 +188,7 @@ details[open] {
 
     .style1 {
         top: 5%; /* On remonte un peu le bloc pour laisser de la place */
-        width: 95%;
+        width: 115%;
     }
 
     .mots-cles {
@@ -196,9 +196,16 @@ details[open] {
         margin-left: 20px;     /* Décale les 3 mots vers la droite */
         font-size: 7vw;        /* Grossit les mots (ajustez selon votre goût) */
         line-height: 1.4;      /* Espace un peu les lignes entre Facile, Fiable, Rapide */
-        color: rgb(255, 191, 0); /* Optionnel : met les mots en jaune pour qu'ils flashent */
+        color: rgb(208, 208, 208); /* Optionnel : met les mots en jaune pour qu'ils flashent */
         font-weight: bold;
     }
+
+    /* Style des coches ✓ */
+.check {
+    color: #3fff04;       /* Un beau vert "sécurité/validation" */
+    font-weight: bold;    /* Pour qu'elles ressortent bien */
+    margin-left: 5px;     /* Petit espace entre le mot et la coche */
+}
 
     /* Ajustement du titre Tarif pour qu'il ne soit pas trop collé */
     .style2 {
