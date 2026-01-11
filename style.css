@@ -1,3 +1,4 @@
+
 /* --- CONFIGURATION DE BASE --- */
 body {
     margin: 0;
@@ -234,6 +235,7 @@ details[open] {
         justify-content: center; /* Centre l'ensemble du bloc dans la page */
         align-items: center;    /* Centre verticalement le logo par rapport au texte */
         padding: 10px;
+        box-sizing: border-box;
     }
 
     .bandeau h1 {
