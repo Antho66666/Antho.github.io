@@ -229,32 +229,32 @@ details[open] {
     }
 
     .bandeau {
-        justify-content: center; /* Sur mobile, on peut tout recentrer si besoin */
-        flex-direction: row;     /* Garde logo et titre sur la même ligne */
+        flex-direction: column; /* Empile Logo puis Titre */
+        align-items: center;    /* Centre tout horizontalement */
+        padding: 10px 0;
     }
     
     .logo {
-        margin-left: 0; /* On retire le décalage gauche du logo */
-        margin-bottom: 10px; /* Espace sous le logo */
-        height: 60px;
+        margin: 0 0 15px 0 !important; /* Force 0 marge sur les côtés et 15px en bas */
+        height: 60px; /* Ajustez la taille selon votre logo */
+        width: auto;
     }
     
     .bandeau h1 {
-        margin-left: 0; /* On retire le décalage gauche du titre */
+        margin: 0 !important;   /* Supprime tout décalage restant du mode PC */
         display: flex;
-        flex-direction: column; /* Empile SOS au-dessus de Méca 66 */
-        align-items: center;    /* Centre les deux horizontalement */
-        line-height: 1;         /* Resserre l'espace vertical entre les deux mots */
+        flex-direction: column; 
+        align-items: center;
         text-align: center;
     }
 
     .titre-sos {
-        font-size: 12vw; /* SOS écrit très gros */
+        font-size: 16vw; /* SOS écrit très gros */
     }
 
     .titre-meca {
-        font-size: 8vw;  /* Méca 66 un peu plus petit en dessous */
-        color: rgb(49, 35, 204); /* Vous pouvez même changer la couleur ici */
+        font-size: 12vw;  /* Méca 66 un peu plus petit en dessous */
+        color: rgb(66, 66, 66); /* Vous pouvez même changer la couleur ici */
     }
 
     .disponibilite p {
