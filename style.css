@@ -427,8 +427,15 @@ details[open] {
     }
     
     .bouton-info {
-        margin: 0; /* On remet la margin à 0 pour que seul le 'gap' gère l'espace */
-        width: 90% !important;
+        min-width: 0 !important; 
+        /* Le bouton prend 90% de la largeur de l'écran */
+        width: 90% !important; 
+        /* On réduit un peu le padding (espace interne) pour gagner de la place */
+        padding: 15px 10px !important; 
+        /* On réduit un peu la police pour que le texte ne saute pas à la ligne */
+        font-size: 1rem !important;
+        margin: 3px auto; /* Centre les boutons avec un espace entre eux *
+        
     }
 
     .texte-principal {
