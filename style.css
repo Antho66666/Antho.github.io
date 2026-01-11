@@ -26,6 +26,9 @@ body {
     font-size: clamp(2rem, 8vw, 6rem); /* S'adapte entre 2rem et 6rem selon l'écran */
     font-family: Impact, sans-serif;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column; /* Aligne "Tarifs" au dessus de "des prestations" */
+    line-height: 0.8;
 }
 
 .logo {
@@ -114,32 +117,67 @@ body {
 }
 
 details {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    background-color: transparent; /* Fond transparent pour plus de finesse */
+    border: none; /* Supprime l'encadré */
+    border-bottom: 1px solid #ddd; /* Juste une ligne fine entre chaque service */
+    margin-bottom: 0; /* Colle les barres les unes aux autres */
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
 /* Style de la ligne cliquable */
 summary {
-    padding: 15px;
-    font-size: 1.2rem;
+    padding: 12px 5px; /* Plus fin en hauteur */
+    font-size: 1.1rem;
     font-weight: bold;
     color: rgb(75, 75, 75);
     cursor: pointer;
-    list-style: none; /* Cache la flèche par défaut sur certains navigateurs */
+    list-style: none; /* Cache la flèche par défaut */
     font-family: 'Trebuchet MS', sans-serif;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Aligne le texte et le triangle */
 }
 
-/* Petit indicateur visuel (le + qui devient -) */
+/* On cache la flèche par défaut de Safari/Chrome */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Création du triangle à gauche */
+summary::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid rgb(66, 66, 66); /* Couleur bleue SOS Méca */
+    margin-right: 15px; /* Espace entre le triangle et le texte */
+    transition: transform 0.3s ease;
+}
+
+/* Rotation du triangle quand c'est ouvert */
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* Style quand le volet est ouvert */
+details[open] {
+    background-color: #fdfdfd;
+}
+
+/* Contenu à l'intérieur du volet */
+.contenu-accordeon {
+    padding: 5px 5px 20px 30px; /* Aligné sous le texte, pas sous le triangle */
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    border-top: none; /* Supprime la ligne interne */
+}
+
+/* Supprime le symbole + que vous aviez mis à droite */
 summary::after {
-    content: "＋";
-    font-size: 1.1rem;
+    content: none !important;
 }
 
 details[open] summary::after {
@@ -182,6 +220,89 @@ details[open] {
     margin-right: 8px;
 }
 
+/* --- CONTENEUR DES 3 BOUTONS --- */
+.groupe-boutons-infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Espace entre les deux blocs */
+    margin: 40px 5%;
+}
+
+/* --- STYLE COMMUN AUX BOUTONS --- */
+.bouton-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgb(0, 72, 131);
+    color: white;
+    text-decoration: none;
+    
+    /* Largeur adaptée pour 2 boutons */
+    min-width: 450px; 
+    padding: 20px 30px;
+    border-radius: 15px;
+    
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.bouton-info:hover {
+    background-color: rgb(0, 140, 255);
+    transform: translateY(-3px);
+}
+
+/* --- TAILLE DES POLICES --- */
+.texte-principal {
+    font-size: 1.2rem; /* Modifiez ici la taille du texte principal */
+    font-weight: bold;
+}
+
+.emoji-bouton {
+    font-size: 1.6rem; /* Taille de l'icône */
+    margin-bottom: 8px;
+}
+
+.sous-texte-bouton {
+    display: block;
+    font-size: 0.85rem; /* Taille du (hors prestation) */
+    font-weight: normal;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.8); /* Blanc légèrement transparent */
+}
+
+.bouton-secondaire:hover {
+    background-color: rgb(0, 140, 255); /* Éclaircissement au survol */
+    transform: scale(1.05); /* Effet de grossissement léger */
+}
+
+/* --- EFFET AU SURVOL --- */
+.bouton-info:hover {
+    background-color: rgb(0, 140, 255);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/*.icon-map {
+    margin-right: 10px; /* L'espace forcé que vous vouliez 
+}*/
+
+.page-tarifs .bandeau h1 {
+    font-size: 3.5rem !important; /* Réduit la taille globale du bloc titre */
+    margin-left: 50px !important; /* Rapproche un peu le texte du logo */
+}
+
+.page-tarifs .titre-presta {
+    font-size: 3.5rem !important;
+    color: rgb(66, 66, 66);
+}
+
+
+
 
 /* --- ADAPTATION MOBILE (Smartphone) --- */
 @media (max-width: 600px) {
@@ -202,7 +323,7 @@ details[open] {
     }
 
     /* Style des coches ✓ */
-.check {
+    .check {
     color: #3fff04;       /* Un beau vert "sécurité/validation" */
     font-weight: bold;    /* Pour qu'elles ressortent bien */
     margin-left: 5px;     /* Petit espace entre le mot et la coche */
@@ -266,8 +387,8 @@ details[open] {
     .logo {
         height: 80px;           /* Taille réduite pour mobile */
         margin: 0 15px 0 0 !important; /* Crée un espace de 15px à DROITE du logo */
-        flex-shrink: 0;         /* Empêche le logo d'être écrasé *
-    
+        flex-shrink: 0;         /* Empêche le logo d'être écrasé */
+    }
     .bandeau h1 {
         margin: 0 !important;   /* Supprime tout décalage restant du mode PC */
         display: flex;
@@ -277,16 +398,47 @@ details[open] {
     }
 
     .titre-sos {
-       font-size: 15vw;         /* Taille du SOS */
+       font-size: 12vw;         /* Taille du SOS */
         display: block;
     }
 
     .titre-meca {
-        font-size: 11vw;         /* Taille du Méca 66 */
+        font-size: 18vw;         /* Taille du Méca 66 */
         display: block;
     }
 
     .disponibilite p {
         font-size: 1rem;
+    }
+
+    .groupe-boutons-infos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bouton-info {
+        width: 100%;
+        max-width: 350px;
+        font-size: 1.1rem; /* Police un peu plus petite sur mobile si besoin */
+    }
+
+    /* --- AJUSTEMENTS UNIQUEMENT POUR LA PAGE TARIFS --- */
+
+
+
+    .page-tarifs .bandeau h1 {
+        margin-left: 0 !important;
+    }
+    
+    .page-tarifs .titre-sos {
+        font-size: 10vw !important; /* Taille adaptée au mobile */
+    }
+
+    .page-tarifs .titre-meca {
+        font-size: 6vw !important; /* Taille adaptée au mobile */
+    }
+    
+    .page-tarifs .logo {
+        height: 60px !important;
     }
 }
