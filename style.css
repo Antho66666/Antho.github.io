@@ -225,7 +225,7 @@ details[open] {
     .zone-devis {
         bottom: 8%;  /* Le bouton devis reste en bas */
         left: 5% !important; /* On s'assure qu'il n'est plus à 45% ou 50% */
-        transform: translateX(-15px); /* Déplace le bouton de 15 pixels vers la gauche */
+        transform: translateX(-13px); /* Déplace le bouton de 15 pixels vers la gauche */
     }
 
     .bandeau {
