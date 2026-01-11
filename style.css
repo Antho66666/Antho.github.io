@@ -97,21 +97,22 @@ body {
     .style1 {
         font-size: 5vw; /* Un peu plus grand sur mobile pour être lisible */
         top: 5%;
+        left: 5%;
     }
 
     .bouton-design {
-        padding: 10px 15px; /* On repasse en pixels pour garder une taille tactile */
-        font-size: 12px;    /* Taille minimum pour être cliquable */
-        border-radius: 5px;
+        padding: 6px 12px; /* On repasse en pixels pour garder une taille tactile */
+        font-size: 10px;    /* Taille minimum pour être cliquable */
+        border-radius: 4px;
     }
 
     .zone-appel {
-        bottom: 10%;
-        left: 3%;
+        bottom: 8%;
+        left: 5%;
     }
 
     .zone-devis {
-        bottom: 10%;
-        left: 52%; /* On décale un peu plus pour éviter la collision */
+        bottom: 8%;
+        left: 45%; /* On décale un peu plus pour éviter la collision */
     }
 }
