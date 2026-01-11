@@ -225,20 +225,29 @@ details[open] {
     .zone-devis {
         bottom: 8%;  /* Le bouton devis reste en bas */
         left: 5% !important; /* On s'assure qu'il n'est plus à 45% ou 50% */
-        transform: translateX(-18px); /* Déplace le bouton de 15 pixels vers la gauche */
+        transform: translateX(-10px); /* Déplace le bouton de 15 pixels vers la gauche */
     }
 
     .bandeau {
-        flex-direction: column; /* Empile Logo puis Titre */
-        align-items: center;    /* Centre tout horizontalement */
-        padding: 10px 0;
+       display: flex;
+        flex-direction: row;    /* Aligne horizontalement */
+        justify-content: center; /* Centre l'ensemble du bloc dans la page */
+        align-items: center;    /* Centre verticalement le logo par rapport au texte */
+        padding: 10px 5px;
+    }
+
+    .bandeau h1 {
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column; /* SOS au dessus, Méca 66 en dessous */
+        align-items: flex-start; /* Aligne le texte à gauche, contre le logo */
+        line-height: 0.9;       /* Rapproche les deux lignes de texte */
     }
     
     .logo {
-        margin: 0 0 15px 0 !important; /* Force 0 marge sur les côtés et 15px en bas */
-        height: 60px; /* Ajustez la taille selon votre logo */
-        width: auto;
-    }
+        height: 50px;           /* Taille réduite pour mobile */
+        margin: 0 15px 0 0 !important; /* Crée un espace de 15px à DROITE du logo */
+        flex-shrink: 0;         /* Empêche le logo d'être écrasé *
     
     .bandeau h1 {
         margin: 0 !important;   /* Supprime tout décalage restant du mode PC */
@@ -249,12 +258,13 @@ details[open] {
     }
 
     .titre-sos {
-        font-size: 16vw; /* SOS écrit très gros */
+       font-size: 8vw;         /* Taille du SOS */
+        display: block;
     }
 
     .titre-meca {
-        font-size: 12vw;  /* Méca 66 un peu plus petit en dessous */
-        color: rgb(66, 66, 66); /* Vous pouvez même changer la couleur ici */
+        font-size: 6vw;         /* Taille du Méca 66 */
+        display: block;
     }
 
     .disponibilite p {
