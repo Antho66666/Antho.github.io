@@ -96,9 +96,9 @@ body {
 @media (max-width: 600px) {
 
     .style1 {
-        font-size: 5.5vw; /* Un peu plus grand sur mobile pour être lisible */
-        top: 10%;
-        left: 5%;
+        font-size: 5vw; /* Un peu plus grand sur mobile pour être lisible */
+        top: 7%;
+        left: 3%;
         width: 90%;
     }
 
