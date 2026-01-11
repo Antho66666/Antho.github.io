@@ -187,10 +187,17 @@ details[open] {
 @media (max-width: 600px) {
 
     .style1 {
-        font-size: 5vw; /* Un peu plus grand sur mobile pour être lisible */
-        top: 7%;
-        left: 3%;
-        width: 90%;
+        top: 5%; /* On remonte un peu le bloc pour laisser de la place */
+        width: 95%;
+    }
+
+    .mots-cles {
+        display: block;
+        margin-left: 20px;     /* Décale les 3 mots vers la droite */
+        font-size: 7vw;        /* Grossit les mots (ajustez selon votre goût) */
+        line-height: 1.4;      /* Espace un peu les lignes entre Facile, Fiable, Rapide */
+        color: rgb(255, 191, 0); /* Optionnel : met les mots en jaune pour qu'ils flashent */
+        font-weight: bold;
     }
 
     /* Ajustement du titre Tarif pour qu'il ne soit pas trop collé */
