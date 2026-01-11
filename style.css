@@ -100,19 +100,25 @@ body {
         left: 5%;
     }
 
+    .conteneur-bouton {
+        left: 5% !important; /* On aligne tout à gauche */
+        width: 90%;          /* Les boutons prendront presque toute la largeur */
+    }
+
     .bouton-design {
-        padding: 6px 12px; /* On repasse en pixels pour garder une taille tactile */
-        font-size: 10px;    /* Taille minimum pour être cliquable */
-        border-radius: 4px;
+        width: 100%;        /* Le bouton remplit son conteneur */
+        padding: 12px 0;    /* On repasse en pixels pour garder une taille tactile */
+        font-size: 14px;    /* Taille minimum pour être cliquable */
+        /* border-radius: 4px; */
     }
 
     .zone-appel {
-        bottom: 8%;
-        left: 5%;
+        bottom: 22%;
+        /* left: 5%; */
     }
 
     .zone-devis {
-        bottom: 8%;
-        left: 45%; /* On décale un peu plus pour éviter la collision */
+        bottom: 8%;  /* Le bouton devis reste en bas */
+        left: 5% !important; /* On s'assure qu'il n'est plus à 45% ou 50% */
     }
 }
