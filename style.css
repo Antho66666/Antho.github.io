@@ -233,7 +233,7 @@ details[open] {
         flex-direction: row;    /* Aligne horizontalement */
         justify-content: center; /* Centre l'ensemble du bloc dans la page */
         align-items: center;    /* Centre verticalement le logo par rapport au texte */
-        padding: 10px 5px;
+        padding: 10px;
     }
 
     .bandeau h1 {
@@ -241,6 +241,8 @@ details[open] {
         display: flex;
         flex-direction: column; /* SOS au dessus, Méca 66 en dessous */
         align-items: flex-start; /* Aligne le texte à gauche, contre le logo */
+        align-items: center;    /* Centre SOS par rapport à Méca 66 */
+        text-align: center;     /* Sécurité supplémentaire pour le texte */
         line-height: 0.9;       /* Rapproche les deux lignes de texte */
     }
     
@@ -258,7 +260,7 @@ details[open] {
     }
 
     .titre-sos {
-       font-size: 8vw;         /* Taille du SOS */
+       font-size: 9vw;         /* Taille du SOS */
         display: block;
     }
 
