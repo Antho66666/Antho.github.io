@@ -188,7 +188,8 @@ details[open] {
 
     .style1 {
         top: 5%; /* On remonte un peu le bloc pour laisser de la place */
-        width: 115%;
+        width: 90%;
+        font-size: 150%;
     }
 
     .mots-cles {
