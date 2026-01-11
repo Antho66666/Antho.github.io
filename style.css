@@ -311,7 +311,7 @@ details[open] {
 @media (max-width: 600px) {
 
     .style1 {
-        top: 5%; /* On remonte un peu le bloc pour laisser de la place */
+        top: 2%; /* On remonte un peu le bloc pour laisser de la place */
         width: 90%;
         font-size: 100%;
     }
