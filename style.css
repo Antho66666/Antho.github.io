@@ -8,17 +8,29 @@ body {
 
 /* --- HEADER --- */
 .bandeau {
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(248, 236, 220);
     width: 100%;
-    padding: 20px 0;
-    text-align: center; /* Centre le titre par défaut */
+    padding: 10px 0;
+    /* text-align: center; /* Centre le titre par défaut */
+    display: flex;
+    align-items: center;      /* Centre verticalement le logo et le texte */
+    justify-content: flex-start; /* Aligne tout vers la gauche au départ */
+
 }
 
 .bandeau h1 {
-    color: rgb(73, 73, 73);
-    margin: 0;
+    color: rgb(66, 66, 66);
+    margin: 0%;
+    margin-left: 120px;        /* Crée le décalage entre le logo et le titre */
     font-size: clamp(2rem, 8vw, 6rem); /* S'adapte entre 2rem et 6rem selon l'écran */
     font-family: Impact, sans-serif;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    height: 200px;             /* Ajustez la taille selon vos besoins */
+    width: auto;
+    margin-left: 15%;         /* Espace entre le bord gauche et le logo */
 }
 
 /* --- SECTION IMAGE ET CONTENU --- */
@@ -92,6 +104,84 @@ body {
     font-size: clamp(1.5rem, 5vw, 2.6rem);
 }
 
+
+
+
+/* --- ACCORDÉONS (ACTIVITÉS) --- */
+.section-activites {
+    margin: 40px 5%;
+}
+
+details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Style de la ligne cliquable */
+summary {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+    list-style: none; /* Cache la flèche par défaut sur certains navigateurs */
+    font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Petit indicateur visuel (le + qui devient -) */
+summary::after {
+    content: "＋";
+    font-size: 1.1rem;
+}
+
+details[open] summary::after {
+    content: "－";
+}
+
+/* Style quand le volet est ouvert */
+details[open] {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contenu à l'intérieur du volet */
+.contenu-accordeon {
+    padding: 0 15px 15px 15px;
+    color: #444;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #eee;
+}
+
+.disponibilite {
+    background-color: #ffffff; /* Gris très clair pour séparer les sections */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 10px; /* Espace avec la photo du dessus */
+    /*border-bottom: 2px solid rgb(255, 255, 255); /* Rappel du bleu SOS Méca */
+}
+
+.disponibilite p {
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #333;
+}
+
+.disponibilite span {
+    color: rgb(255, 191, 0); /* La flèche en jaune pour attirer l'œil */
+    margin-right: 8px;
+}
+
+
 /* --- ADAPTATION MOBILE (Smartphone) --- */
 @media (max-width: 600px) {
 
@@ -135,5 +225,24 @@ body {
     .zone-devis {
         bottom: 8%;  /* Le bouton devis reste en bas */
         left: 5% !important; /* On s'assure qu'il n'est plus à 45% ou 50% */
+        transform: translateX(-15px); /* Déplace le bouton de 15 pixels vers la gauche */
+    }
+
+    .bandeau {
+        justify-content: center; /* Sur mobile, on peut tout recentrer si besoin */
+        flex-direction: row;     /* Garde logo et titre sur la même ligne */
+    }
+    
+    .logo {
+        height: 50px;            /* Logo plus petit sur smartphone */
+        margin-left: 2%;
+    }
+    
+    .bandeau h1 {
+        margin-left: 15px;       /* Espacement réduit sur mobile */
+    }
+
+    .disponibilite p {
+        font-size: 1rem;
     }
 }
