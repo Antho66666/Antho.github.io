@@ -54,13 +54,13 @@ body {
 }
 
 .zone-appel {
-    bottom: 15%; /* À 15% du bas de l'image */
-    left: 5%;
+    bottom: 35%; /* À 15% du bas de l'image */
+    left: 23.5%;
 }
 
 .zone-devis {
     bottom: 15%;
-    left: 40%; /* Ajusté pour être à côté du premier bouton */
+    left: 24%; /* Ajusté pour être à côté du premier bouton */
 }
 
 .bouton-design {
@@ -68,7 +68,7 @@ body {
     padding: 1.2vw 2.5vw; /* Padding proportionnel à l'écran */
     border: none;
     border-radius: 8px;
-    font-size: 1.2vw; /* Taille de police proportionnelle */
+    font-size: 1.5vw; /* Taille de police proportionnelle */
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -76,8 +76,8 @@ body {
 }
 
 /* Couleurs */
-.zone-appel .bouton-design { background-color: rgb(255, 191, 0); color: #222; }
-.zone-devis .bouton-design { background-color: rgb(0, 140, 255); color: white; }
+.zone-appel .bouton-design { background-color: rgb(255, 191, 0); color: rgb(0, 72, 131); }
+.zone-devis .bouton-design { background-color: rgb(0, 140, 255); color: rgb(246, 255, 0); }
 
 .conteneur-bouton:hover .bouton-design {
     transform: translateY(-3px);
