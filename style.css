@@ -1,28 +1,29 @@
-/* Configuration de base */
+/* --- CONFIGURATION DE BASE --- */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Évite le scroll horizontal bizarre sur mobile */
 }
 
-/* Header */
+/* --- HEADER --- */
 .bandeau {
     background-color: rgb(234, 234, 234);
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
+    text-align: center; /* Centre le titre par défaut */
 }
 
 .bandeau h1 {
     color: rgb(73, 73, 73);
     margin: 0;
-    font-size: 6rem;
+    font-size: clamp(2rem, 8vw, 6rem); /* S'adapte entre 2rem et 6rem selon l'écran */
     font-family: Impact, sans-serif;
-    padding: 0 130px;
 }
 
-/* Section Image et Contenu */
+/* --- SECTION IMAGE ET CONTENU --- */
 #meca1 {
-    position: relative; /* Indispensable pour placer les boutons par-dessus */
+    position: relative; 
     width: 100%;
 }
 
@@ -32,19 +33,20 @@ body {
     display: block;
 }
 
-/* Texte sur l'image */
+/* --- TEXTE SUR L'IMAGE --- */
 .style1 {
     position: absolute;
-    top: 50px;
-    left: 60px;
+    top: 10%;  /* Positionné à 10% du haut de l'image */
+    left: 5%;  /* Positionné à 5% du bord gauche */
     color: rgb(197, 197, 197);
     margin: 0;
     font-family: 'Trebuchet MS', sans-serif;
-    font-size: 2.6rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Pour mieux lire le texte */
+    font-size: 3.5vw; /* La taille du texte dépend de la largeur de l'écran */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    line-height: 1.2;
 }
 
-/* Liens / Conteneurs des boutons */
+/* --- BOUTONS SUR L'IMAGE --- */
 .conteneur-bouton {
     position: absolute;
     text-decoration: none;
@@ -52,96 +54,64 @@ body {
 }
 
 .zone-appel {
-    top: 300px;
-    left: 60px;
+    bottom: 15%; /* À 15% du bas de l'image */
+    left: 5%;
 }
 
 .zone-devis {
-    top: 300px;
-    left: 380px;
+    bottom: 15%;
+    left: 40%; /* Ajusté pour être à côté du premier bouton */
 }
 
-/* Design des boutons */
 .bouton-design {
     cursor: pointer;
-    padding: 15px 30px;
+    padding: 1.2vw 2.5vw; /* Padding proportionnel à l'écran */
     border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    font-size: 1.2vw; /* Taille de police proportionnelle */
+    font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    white-space: nowrap; /* Empêche le texte du bouton de revenir à la ligne */
 }
 
-/* Couleurs spécifiques */
-.zone-appel .bouton-design {
-    background-color: rgb(255, 191, 0);
-    color: rgb(38, 38, 38);
-}
+/* Couleurs */
+.zone-appel .bouton-design { background-color: rgb(255, 191, 0); color: #222; }
+.zone-devis .bouton-design { background-color: rgb(0, 140, 255); color: white; }
 
-.zone-devis .bouton-design {
-    background-color: rgb(0, 140, 255);
-    color: white;
-}
-
-/* Effets au survol */
 .conteneur-bouton:hover .bouton-design {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    filter: brightness(1.2);
+    transform: translateY(-3px);
+    filter: brightness(1.1);
 }
 
-/* Texte Tortue (sous l'image) */
+/* --- TEXTE SOUS L'IMAGE --- */
 .style2 {
     color: rgb(246, 4, 4);
-    margin: 50px 60px;
+    margin: 40px 5%;
     font-family: 'Trebuchet MS', sans-serif;
-    font-size: 2.6rem;
+    font-size: clamp(1.5rem, 5vw, 2.6rem);
 }
 
-
-
-/* --- ADAPTATION POUR MOBILE (Écrans de moins de 768px) --- */
-@media (max-width: 768px) {
-    
-    /* Réduction de la taille du titre du bandeau */
-    .bandeau h1 {
-        font-size: 2.5rem; /* Beaucoup plus petit sur mobile */
-        padding: 0 20px;
-        text-align: center;
-    }
-
-    /* Gestion du texte sur l'image */
+/* --- ADAPTATION MOBILE (Smartphone) --- */
+@media (max-width: 600px) {
     .style1 {
-        position: relative; /* On enlève le positionnement par-dessus l'image */
-        top: 0;
-        left: 0;
-        padding: 20px;
-        font-size: 1.5rem;
-        color: #333; /* On le met en sombre pour le lire sur fond blanc */
-        text-align: center;
-        text-shadow: none;
-    }
-
-    /* On repositionne les boutons l'un en dessous de l'autre */
-    .conteneur-bouton {
-        position: relative; /* Ils ne flottent plus sur l'image */
-        display: block;
-        top: 0 !important;
-        left: 0 !important;
-        margin: 10px auto;
-        width: 80%; /* Boutons larges pour faciliter le clic au doigt */
-        text-align: center;
+        font-size: 5vw; /* Un peu plus grand sur mobile pour être lisible */
+        top: 5%;
     }
 
     .bouton-design {
-        width: 100%;
-        font-size: 1rem;
+        padding: 10px 15px; /* On repasse en pixels pour garder une taille tactile */
+        font-size: 12px;    /* Taille minimum pour être cliquable */
+        border-radius: 5px;
     }
 
-    /* Ajustement du titre Tarif */
-    .style2 {
-        font-size: 1.8rem;
-        margin: 30px 20px;
-        text-align: center;
+    .zone-appel {
+        bottom: 10%;
+        left: 3%;
+    }
+
+    .zone-devis {
+        bottom: 10%;
+        left: 52%; /* On décale un peu plus pour éviter la collision */
     }
 }
