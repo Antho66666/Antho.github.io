@@ -1,0 +1,147 @@
+/* Configuration de base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.bandeau {
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+    padding: 30px 0;
+}
+
+.bandeau h1 {
+    color: rgb(73, 73, 73);
+    margin: 0;
+    font-size: 6rem;
+    font-family: Impact, sans-serif;
+    padding: 0 130px;
+}
+
+/* Section Image et Contenu */
+#meca1 {
+    position: relative; /* Indispensable pour placer les boutons par-dessus */
+    width: 100%;
+}
+
+#meca1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Texte sur l'image */
+.style1 {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    color: rgb(197, 197, 197);
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Pour mieux lire le texte */
+}
+
+/* Liens / Conteneurs des boutons */
+.conteneur-bouton {
+    position: absolute;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.zone-appel {
+    top: 300px;
+    left: 60px;
+}
+
+.zone-devis {
+    top: 300px;
+    left: 380px;
+}
+
+/* Design des boutons */
+.bouton-design {
+    cursor: pointer;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Couleurs spécifiques */
+.zone-appel .bouton-design {
+    background-color: rgb(255, 191, 0);
+    color: rgb(38, 38, 38);
+}
+
+.zone-devis .bouton-design {
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+/* Effets au survol */
+.conteneur-bouton:hover .bouton-design {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    filter: brightness(1.2);
+}
+
+/* Texte Tortue (sous l'image) */
+.style2 {
+    color: rgb(246, 4, 4);
+    margin: 50px 60px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 2.6rem;
+}
+
+
+
+/* --- ADAPTATION POUR MOBILE (Écrans de moins de 768px) --- */
+@media (max-width: 768px) {
+    
+    /* Réduction de la taille du titre du bandeau */
+    .bandeau h1 {
+        font-size: 2.5rem; /* Beaucoup plus petit sur mobile */
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    /* Gestion du texte sur l'image */
+    .style1 {
+        position: relative; /* On enlève le positionnement par-dessus l'image */
+        top: 0;
+        left: 0;
+        padding: 20px;
+        font-size: 1.5rem;
+        color: #333; /* On le met en sombre pour le lire sur fond blanc */
+        text-align: center;
+        text-shadow: none;
+    }
+
+    /* On repositionne les boutons l'un en dessous de l'autre */
+    .conteneur-bouton {
+        position: relative; /* Ils ne flottent plus sur l'image */
+        display: block;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 10px auto;
+        width: 80%; /* Boutons larges pour faciliter le clic au doigt */
+        text-align: center;
+    }
+
+    .bouton-design {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Ajustement du titre Tarif */
+    .style2 {
+        font-size: 1.8rem;
+        margin: 30px 20px;
+        text-align: center;
+    }
+}
