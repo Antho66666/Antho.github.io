@@ -408,7 +408,7 @@ details[open] {
     .titre-meca {
         font-size: 18vw;         /* Taille du Méca 66 */
         display: block;
-        margin-top: -3%;
+        margin-top: -5px;
     }
 
     .disponibilite p {
