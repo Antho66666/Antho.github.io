@@ -247,7 +247,7 @@ details[open] {
     }
     
     .logo {
-        height: 50px;           /* Taille réduite pour mobile */
+        height: 100px;           /* Taille réduite pour mobile */
         margin: 0 15px 0 0 !important; /* Crée un espace de 15px à DROITE du logo */
         flex-shrink: 0;         /* Empêche le logo d'être écrasé *
     
@@ -260,12 +260,12 @@ details[open] {
     }
 
     .titre-sos {
-       font-size: 9vw;         /* Taille du SOS */
+       font-size: 16vw;         /* Taille du SOS */
         display: block;
     }
 
     .titre-meca {
-        font-size: 6vw;         /* Taille du Méca 66 */
+        font-size: 12vw;         /* Taille du Méca 66 */
         display: block;
     }
 
